@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+// Function to convert Celsius to Fahrenheit
+double celsiusToFahrenheit(double celsius) {
+    return (celsius * 9.0 / 5.0) + 32.0;
+}
+
+// Function to convert Fahrenheit to Celsius
+double fahrenheitToCelsius(double fahrenheit) {
+    return (fahrenheit - 32.0) * 5.0 / 9.0;
+}
+
+int main() {
+    cout << "Temperature Converter App" << endl;
+    cout << "Options:" << endl;
+    cout << "1. Convert Celsius to Fahrenheit" << endl;
+    cout << "2. Convert Fahrenheit to Celsius" << endl;
+    cout << "3. Exit" << endl;
+
+    while (true) {
+        int choice;
+        cout << "Enter your choice (1/2/3): ";
+        cin >> choice;
+
+        if (choice == 1) {
+            double celsius;
+            cout << "Enter temperature in Celsius: ";
+            cin >> celsius;
+            double fahrenheit = celsiusToFahrenheit(celsius);
+            cout << "Temperature in Fahrenheit: " << fahrenheit << "°F" << endl;
+        } else if (choice == 2) {
+            double fahrenheit;
+            cout << "Enter temperature in Fahrenheit: ";
+            cin >> fahrenheit;
+            double celsius = fahrenheitToCelsius(fahrenheit);
+            cout << "Temperature in Celsius: " << celsius << "°C" << endl;
+        } else if (choice == 3) {
+            cout << "Exiting the program." << endl;
+            break;
+        } else {
+            cout << "Invalid choice. Please enter 1, 2, or 3." << endl;
+        }
+    }
+
+    return 0;
+}
